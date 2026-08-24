@@ -1,0 +1,15 @@
+cycler
+importlib-resources
+joblib
+kiwisolver
+matplotlib
+numpy
+pandas
+Pillow
+pycryptodome
+pyparsing
+python-dateutil
+pytz
+six
+tqdm
+zipp

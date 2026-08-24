@@ -1,0 +1,37 @@
+import numpy as np
+
+REPL_DEBUG = False
+INVALID_TAG = -1
+
+class setAssocRRCache:
+    def __init__(self, numLines, associativity, lineSize):
+        self.numLines = numLines
+        self.associativity = associativity
+        self.lineSize = lineSize 
+        self.tagStore = np.ones((int(numLines/associativity), associativity), dtype=np.int32) * INVALID_TAG
+        self.victimCounter = np.zeros(int(numLines/associativity), dtype=np.int32)
+
+    def clearCache(self, debug=False):
+        self.tagStore = np.ones((int(self.numLines/self.associativity), self.associativity), dtype=np.int32) * INVALID_TAG
+
+    def getTag(self, addr):
+        return int(addr / (self.lineSize * (self.numLines / self.associativity)))
+
+    def getSet(self, addr):
+        return int((addr / self.lineSize) % (self.numLines / self.associativity))
+
+    def cacheAccess(self, addr, debug=False):
+        for tag in self.tagStore[self.getSet(addr)]:
+            if tag == self.getTag(addr):
+                return True
+        return False
+
+    def cacheRepl(self, addr, debug=False):
+        assert(self.cacheAccess(addr,debug) is False)
+        
+        replWay = self.victimCounter[self.getSet(addr)]
+        self.victimCounter[self.getSet(addr)] = (self.victimCounter[self.getSet(addr)] + 1) % self.associativity
+        self.tagStore[self.getSet(addr)][replWay] = self.getTag(addr)
+        return
+
+

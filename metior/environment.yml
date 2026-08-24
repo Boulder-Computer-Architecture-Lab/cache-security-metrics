@@ -1,0 +1,23 @@
+name: metior
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+
+  - cycler
+  - importlib-resources
+  - joblib
+  - kiwisolver
+  - matplotlib
+  - numpy
+  - pandas
+  - pillow
+  - pycryptodome
+  - pyparsing
+  - python-dateutil
+  - pytz
+  - six
+  - tqdm
+  - zipp
