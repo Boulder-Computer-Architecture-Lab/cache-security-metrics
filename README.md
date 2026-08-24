@@ -63,7 +63,7 @@ The following caches were added to Metior:
 
 ### PAS
 
-We created a framework to derive the PAS probabilities based on [1].
+We created a framework to derive the PAS probabilities based on [8].
 
 ## References
 
