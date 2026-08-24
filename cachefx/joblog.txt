@@ -1,0 +1,7 @@
+Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
+3	:	1771947579.504	120060.307	0	573579	0	0	./cachefx -v AES -c configs/cl8192/w16/setassoc_rand.xml -m entropy -a occupancy -o results/512kb/setassoc_rand
+4	:	1771947579.506	126865.059	0	573575	0	0	./cachefx -v AES -c configs/cl8192/w16/scattercache.xml -m entropy -a occupancy -o results/512kb/scattercache
+5	:	1771947579.507	153216.792	0	537805	0	0	./cachefx -v AES -c configs/cl8192/w16/wpcache_lru.xml -m entropy -a occupancy -o results/512kb/wpcache_lru
+2	:	1771947579.503	172974.180	0	573579	0	0	./cachefx -v AES -c configs/cl8192/w16/setassoc_treeplru.xml -m entropy -a occupancy -o results/512kb/setassoc_treeplru
+1	:	1771947579.501	178678.504	0	573579	0	0	./cachefx -v AES -c configs/cl8192/w16/setassoc_lru.xml -m entropy -a occupancy -o results/512kb/setassoc_lru
+6	:	1771947579.508	224697.701	0	573571	0	0	./cachefx -v AES -c configs/cl8192/assoc_lru.xml -m entropy -a occupancy -o results/512kb/assoc_lru
